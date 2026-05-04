@@ -1,1 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DivulgaTEA | Crachá Autista Digital</title>
+  <meta name="description" content="Crachá Autista Digital e Carta de Apresentação Escolar para mais segurança, respeito e inclusão." />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      color: #123;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.28), transparent 26%),
+        radial-gradient(circle at 80% 10%, rgba(255, 105, 180, 0.25), transparent 24%),
+        radial-gradient(circle at 10% 80%, rgba(0, 191, 255, 0.25), transparent 26%),
+        radial-gradient(circle at 90% 85%, rgba(50, 205, 50, 0.22), transparent 25%),
+        linear-gradient(135deg, #e8f7ff, #fff7fb);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(45deg, rgba(0, 102, 255, .08) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255, 0, 120, .07) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255, 204, 0, .08) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(0, 180, 120, .07) 75%);
+      background-size: 70px 70px;
+      opacity: .7;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 6px 22px rgba(0,0,0,.08);
+    }
+
+    .topo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      color: #0756c9;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      background: #ff2f85;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 8px 20px rgba(255, 47, 133, .28);
+      transition: transform .2s, filter .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(.95);
+    }
+
+    .btn.azul {
+      background: #0756c9;
+      box-shadow: 0 8px 20px rgba(7, 86, 201, .25);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 38px;
+      padding: 70px 0 50px;
+    }
+
+    .selo {
+      display: inline-flex;
+      background: #fff2a8;
+      color: #8a6100;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: 1.02;
+      color: #0756c9;
+      font-weight: 950;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      line-height: 1.55;
+      color: #334;
+      margin-bottom: 28px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,.95);
+      border-radius: 34px;
+      padding: 28px;
+      box-shadow: 0 22px 55px rgba(0,0,0,.14);
+      border: 2px solid rgba(255,255,255,.75);
+      text-align: center;
+    }
+
+    .cracha-preview {
+      background: linear-gradient(150deg, #bdefff, #fff, #ffd1e7);
+      border-radius: 28px;
+      min-height: 410px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 4px dashed rgba(7,86,201,.18);
+    }
+
+    .cracha-icon {
+      font-size: 78px;
+      margin-bottom: 12px;
+    }
+
+    .cracha-preview h2 {
+      color: #0756c9;
+      font-size: 31px;
+      margin-bottom: 12px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      width: 100%;
+      margin-top: 24px;
+    }
+
+    .mini {
+      background: white;
+      border-radius: 18px;
+      padding: 18px 10px;
+      font-weight: 900;
+      color: #0756c9;
+      box-shadow: 0 8px 18px rgba(0,0,0,.08);
+    }
+
+    .faixa {
+      background: #0756c9;
+      color: white;
+      padding: 36px 0;
+      margin: 25px 0 0;
+    }
+
+    .faixa-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      text-align: center;
+    }
+
+    .faixa h3 {
+      font-size: 30px;
+      margin-bottom: 5px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .titulo h2 {
+      font-size: clamp(32px, 4vw, 50px);
+      color: #0756c9;
+      margin-bottom: 12px;
+    }
+
+    .titulo p {
+      font-size: 19px;
+      color: #445;
+    }
+
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.96);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.11);
+      border: 1px solid rgba(7,86,201,.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card.destaque {
+      border: 3px solid #ff2f85;
+      transform: scale(1.03);
+    }
+
+    .tag {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: #ff2f85;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .icone {
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      color: #0756c9;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .preco {
+      color: #ff2f85;
+      font-size: 32px;
+      font-weight: 950;
+      margin: 10px 0 16px;
+    }
+
+    .card p {
+      color: #445;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 18px 0 24px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      font-weight: 700;
+      color: #233;
+    }
+
+    li::before {
+      content: "✔️ ";
+    }
+
+    .impacto {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .impacto-box {
+      background: white;
+      border-radius: 32px;
+      padding: 38px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.11);
+    }
+
+    .impacto-box h2 {
+      color: #ff2f85;
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+
+    .impacto-box p {
+      font-size: 22px;
+      line-height: 1.5;
+      color: #334;
+      font-weight: 700;
+    }
+
+    .beneficios {
+      display: grid;
+      gap: 16px;
+    }
+
+    .beneficio {
+      background: white;
+      padding: 22px;
+      border-radius: 22px;
+      font-size: 19px;
+      font-weight: 900;
+      color: #0756c9;
+      box-shadow: 0 10px 24px rgba(0,0,0,.08);
+    }
+
+    .passos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .passo {
+      background: white;
+      border-radius: 26px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,.09);
+    }
+
+    .numero {
+      width: 52px;
+      height: 52px;
+      background: #ff2f85;
+      color: white;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+      font-size: 24px;
+      margin: 0 auto 14px;
+    }
+
+    .passo h3 {
+      color: #0756c9;
+      font-size: 20px;
+    }
+
+    .final {
+      background: linear-gradient(135deg, #0756c9, #ff2f85);
+      color: white;
+      border-radius: 36px;
+      padding: 50px 28px;
+      text-align: center;
+      box-shadow: 0 24px 55px rgba(0,0,0,.18);
+    }
+
+    .final h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      margin-bottom: 14px;
+    }
+
+    .final p {
+      font-size: 21px;
+      margin-bottom: 28px;
+    }
+
+    footer {
+      background: #05285d;
+      color: white;
+      text-align: center;
+      padding: 32px 0;
+    }
+
+    footer strong {
+      font-size: 23px;
+    }
+
+    footer p {
+      margin-top: 10px;
+      color: #cfe0ff;
+    }
+
+    .whatsapp-fixo {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      background: #25d366;
+      color: white;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      z-index: 30;
+    }
+
+    @media (max-width: 880px) {
+      .hero,
+      .impacto,
+      .produtos,
+      .passos,
+      .faixa-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card.destaque {
+        transform: none;
+      }
+
+      .topo {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- TROQUE AQUI SE QUISER ALTERAR O WHATSAPP -->
+  <script>
+    const linkWhatsApp = "https://wa.me/5588996358375?text=Ol%C3%A1%2C%20quero%20pedir%20meu%20crach%C3%A1%20autista%20digital%20e%20saber%20mais%20sobre%20a%20carta%20de%20apresenta%C3%A7%C3%A3o.";
+  </script>
+
+  <header>
+    <div class="container topo">
+      <div class="logo">🧩 DivulgaTEA</div>
+      <a class="btn azul js-whats" href="#">Peça agora</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div>
+        <span class="selo">🪪 Identificação, respeito e segurança</span>
+        <h1>Crachá Autista Digital + Carta de Apresentação Escolar</h1>
+        <p>
+          Materiais personalizados para ajudar famílias, escolas e cuidadores a garantirem mais compreensão,
+          acolhimento e respeito à criança autista no dia a dia.
+        </p>
+        <a class="btn js-whats" href="#">Quero pedir o meu agora</a>
+      </div>
+
+      <div class="hero-card">
+        <div class="cracha-preview">
+          <div class="cracha-icon">🪪</div>
+          <h2>Crachá Autista Digital</h2>
+          <p>Com QR Code para laudo e informações essenciais.</p>
+          <div class="mini-grid">
+            <div class="mini">QR Code</div>
+            <div class="mini">Segurança</div>
+            <div class="mini">Respeito</div>
+            <div class="mini">Inclusão</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="faixa">
+      <div class="container faixa-grid">
+        <div>
+          <h3>+ Segurança</h3>
+          <p>em locais públicos</p>
+        </div>
+        <div>
+          <h3>+ Respeito</h3>
+          <p>aos direitos da criança</p>
+        </div>
+        <div>
+          <h3>+ Clareza</h3>
+          <p>para escola e cuidadores</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="container" id="produtos">
+      <div class="titulo">
+        <h2>Escolha o seu material</h2>
+        <p>Produtos digitais personalizados para a rotina da família atípica.</p>
+      </div>
+
+      <div class="produtos">
+        <div class="card">
+          <div class="icone">🧩</div>
+          <h3>Crachá Autista Digital</h3>
+          <div class="preco">R$ 15,99</div>
+          <p>Identificação personalizada para facilitar atendimento e evitar constrangimentos.</p>
+          <ul>
+            <li>QR Code com laudo médico</li>
+            <li>Dados importantes da criança</li>
+            <li>Envio digital</li>
+            <li>Mais segurança no dia a dia</li>
+          </ul>
+          <a class="btn azul js-whats" href="#">Pedir crachá</a>
+        </div>
+
+        <div class="card">
+          <div class="icone">📘</div>
+          <h3>Carta de Apresentação Escolar</h3>
+          <div class="preco">R$ 29,99</div>
+          <p>Documento para ajudar professores e cuidadores a entenderem melhor a criança.</p>
+          <ul>
+            <li>Perfil da criança</li>
+            <li>O que ajuda na regulação</li>
+            <li>O que pode desregular</li>
+            <li>Facilita a inclusão escolar</li>
+          </ul>
+          <a class="btn azul js-whats" href="#">Pedir carta</a>
+        </div>
+
+        <div class="card destaque">
+          <span class="tag">MAIS VENDIDO</span>
+          <div class="icone">🔥</div>
+          <h3>Combo Completo</h3>
+          <div class="preco">R$ 39,99</div>
+          <p>Crachá Autista Digital + Carta de Apresentação Escolar.</p>
+          <ul>
+            <li>Solução completa</li>
+            <li>Ideal para escola e dia a dia</li>
+            <li>Mais economia</li>
+            <li>Mais proteção e informação</li>
+          </ul>
+          <a class="btn js-whats" href="#">Quero o combo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container impacto">
+      <div class="impacto-box">
+        <h2>Não é só um crachá.</h2>
+        <p>
+          É uma forma de proteger, informar e evitar que a criança seja julgada antes de ser compreendida.
+          É dignidade, inclusão e respeito.
+        </p>
+      </div>
+
+      <div class="beneficios">
+        <div class="beneficio">⭐ Atendimento prioritário com mais clareza</div>
+        <div class="beneficio">⭐ Informações importantes sempre à mão</div>
+        <div class="beneficio">⭐ Apoio para professores e cuidadores</div>
+        <div class="beneficio">⭐ Mais tranquilidade para a família</div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="titulo">
+        <h2>Como funciona?</h2>
+        <p>Processo simples, rápido e direto pelo WhatsApp.</p>
+      </div>
+
+      <div class="passos">
+        <div class="passo">
+          <div class="numero">1</div>
+          <h3>Faça o pedido</h3>
+        </div>
+        <div class="passo">
+          <div class="numero">2</div>
+          <h3>Envie os dados</h3>
+        </div>
+        <div class="passo">
+          <div class="numero">3</div>
+          <h3>Receba tudo pronto</h3>
+        </div>
+        <div class="passo">
+          <div class="numero">4</div>
+          <h3>Use com segurança</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="final">
+        <h2>Garanta mais segurança e respeito para seu filho hoje.</h2>
+        <p>Peça agora pelo WhatsApp e receba seu material personalizado.</p>
+        <a class="btn js-whats" href="#">Falar no WhatsApp agora</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>DivulgaTEA 🧩</strong>
+    <p>Inclusão, informação e acolhimento.</p>
+    <p>@geisaperobelimae_atipica • @divulgatea_inclusao</p>
+  </footer>
+
+  <a class="whatsapp-fixo js-whats" href="#" aria-label="WhatsApp">💬</a>
+
+  <script>
+    document.querySelectorAll(".js-whats").forEach((botao) => {
+      botao.href = linkWhatsApp;
+      botao.target = "_blank";
+      botao.rel = "noopener noreferrer";
+    });
+  </script>
+</body>
+</html>
+
+
 
